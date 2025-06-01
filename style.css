@@ -108,4 +108,14 @@ footer {
     padding: 10px;
     font-size: 0.9rem;
   }
+  /* Center only this content block */
+.content.centered {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.content.centered .inner {
+  max-width: 600px;
+}
 }
