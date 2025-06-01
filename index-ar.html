@@ -37,14 +37,18 @@
     direction: rtl;
     text-align: right;
   }
-  /* Center only this content block */
-.content.centered {
+/* Full center alignment for Arabic intro section */
+body[dir="rtl"] #header .content {
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 100%;
   text-align: center;
+  direction: rtl;
 }
 
-.content.centered .inner {
+body[dir="rtl"] #header .content .inner {
+  margin: 0;
   max-width: 600px;
 }
 
@@ -69,15 +73,16 @@
 						<img src="images/profile.jpg" alt="Rayed Ghazawi" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
 
 						
-						<div class="content centered">
+						<div class="content">
 						  <div class="inner">
 						    <h1>رائد غزاوي</h1>
-						    <p>محاضر في قسم علم البيانات <a href="https://uqu.edu.sa">بجامعة أم القرى</a><br />
+						    <p>
+						      محاضر في قسم علم البيانات <a href="https://uqu.edu.sa">بجامعة أم القرى</a><br />
 						      طالب دكتوراه في معالجة اللغة الطبيعية والذكاء الاصطناعي <a href="https://www.bristol.ac.uk/">بجامعة بريستول</a>
 						    </p>
 						  </div>
 						</div>
-				<nav>
+										<nav>
 					<ul>
 						<li><a href="#Overview">نبذة</a></li>
 						<li><a href="#Interests">الاهتمامات</a></li>
