@@ -167,4 +167,32 @@ body[dir="rtl"] .nav-bar {
         max-width: 600px;
     }
 }
+  /* Custom CSS for RTL centering in header */
+
+/* Ensure the header content is a flex container and centers its items */
+body[dir="rtl"] #header .content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically if there's available height */
+    text-align: center;      /* Ensure text within is centered */
+    width: 100%;             /* Make sure it takes full width to center effectively */
+}
+
+/* Ensure the inner div also centers its content */
+body[dir="rtl"] #header .content .inner {
+    max-width: 600px; /* Keep your existing max-width for readability */
+    margin: 0 auto;   /* Re-apply margin auto for block centering just in case */
+    text-align: center; /* Crucial for centering the text (h1, p) within the inner div */
+}
+
+/* Override any potential left alignment from the template on the h1 and p within the header */
+body[dir="rtl"] #header .content .inner h1,
+body[dir="rtl"] #header .content .inner p {
+    text-align: center;
+}
+
+/* Adjust navigation bar for RTL to align to the right */
+body[dir="rtl"] .nav-bar {
+    justify-content: flex-end;
+}
 }
