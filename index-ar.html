@@ -6,12 +6,16 @@
 -->
 <HTML lang="ar">
 	<head>
-		<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@300..700&display=swap" rel="stylesheet">
+<style>
   body[dir="rtl"] {
     direction: rtl;
     text-align: right;
   }
 
+  /* This is to correctly align general elements for RTL, as you already have */
   body[dir="rtl"] header,
   body[dir="rtl"] .content,
   body[dir="rtl"] .inner,
@@ -38,8 +42,75 @@
     text-align: right;
   }
 
-</style>
+  /* --- NEW RULES TO CENTER THE HEADER CONTENT --- */
+  body[dir="rtl"] #header .content {
+    display: flex; /* Make it a flex container */
+    justify-content: center; /* Center flex items horizontally */
+    align-items: center; /* Center flex items vertically */
+    width: 100%; /* Ensure it takes full available width */
+    text-align: center; /* Fallback for text alignment */
+  }
 
+  body[dir="rtl"] #header .content .inner {
+    margin: 0 auto; /* Center the block itself */
+    text-align: center; /* Center the text within the inner block */
+    /* You might have a max-width already defined in main.css, keep it if it looks good */
+    /* max-width: 600px; */ 
+  }
+
+  /* Ensure h1 and p within this specific block are centered */
+  body[dir="rtl"] #header .content .inner h1,
+  body[dir="rtl"] #header .content .inner p {
+    text-align: center;
+  }
+
+  /* You might also want to center the profile image if it's part of the header's flex layout */
+  body[dir="rtl"] #header img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block; /* Important for margin auto to work */
+  }
+ /* --- FONT RULES FOR ARABIC PAGE ONLY (Updated for Changa) --- */
+  body[dir="rtl"],
+  body[dir="rtl"] h1,
+  body[dir="rtl"] h2,
+  body[dir="rtl"] h3,
+  body[dir="rtl"] h4,
+  body[dir="rtl"] h5,
+  body[dir="rtl"] h6,
+  body[dir="rtl"] p,
+  body[dir="rtl"] a,
+  body[dir="rtl"] label,
+  body[dir="rtl"] input,
+  body[dir="rtl"] select,
+  body[dir="rtl"] textarea,
+  body[dir="rtl"] strong,
+  body[dir="rtl"] b {
+    font-family: 'Changa', sans-serif !important; /* Applied 'Changa' font */
+  }
+
+  /* Adjust font-weight for headings and other elements as needed with Changa's weights */
+  body[dir="rtl"] h1,
+  body[dir="rtl"] h2,
+  body[dir="rtl"] h3,
+  body[dir="rtl"] strong,
+  body[dir="rtl"] b {
+    font-weight: 600 !important; /* 'Changa' has a nice 600 (SemiBold) or 700 (Bold) */
+  }
+  /* And regular for body text */
+  body[dir="rtl"] p,
+  body[dir="rtl"] a,
+  body[dir="rtl"] label,
+  body[dir="rtl"] input,
+  body[dir="rtl"] select,
+  body[dir="rtl"] textarea {
+    font-weight: 400 !important; /* 'Changa' Regular is 400 */
+  }
+
+</style>
+		
+
+		
 		<title>رائد غزاوي |باحث في معالجة اللغة الطبيعية</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
