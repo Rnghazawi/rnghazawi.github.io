@@ -118,4 +118,53 @@ footer {
 .content.centered .inner {
   max-width: 600px;
 }
+
+/* Add this to your existing CSS file */
+
+body[dir="rtl"] #header .content .inner {
+    margin: 0 auto; /* This centers the block-level element */
+    text-align: center; /* This centers the text within the block */
+}
+
+/* You might already have these, but ensure they are present for general RTL alignment */
+body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body[dir="rtl"] header,
+body[dir="rtl"] .content,
+body[dir="rtl"] .inner,
+body[dir="rtl"] #main article {
+    text-align: right; /* Default for most content */
+}
+
+/* Ensure the nav-bar also aligns correctly for RTL */
+body[dir="rtl"] .nav-bar {
+    justify-content: flex-end; /* Align nav items to the right */
+}
+
+/* The existing responsive tweaks should still apply */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+    .nav-bar a {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    /* This rule you had is good for other centered content if needed */
+    .content.centered {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .content.centered .inner {
+        max-width: 600px;
+    }
+}
 }
